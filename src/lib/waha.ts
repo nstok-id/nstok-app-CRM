@@ -6,13 +6,8 @@
 const WAHA_BASE_URL = process.env.WAHA_BASE_URL || 'https://waha.nstok.my.id';
 const WAHA_API_KEY = process.env.WAHA_API_KEY || '';
 
-interface WahaHeaders {
-  'Content-Type': string;
-  'X-Api-Key'?: string;
-}
-
-function getHeaders(): WahaHeaders {
-  const headers: WahaHeaders = {
+function getHeaders(): Record<string, string> {
+  const headers: Record<string, string> = {
     'Content-Type': 'application/json',
   };
   if (WAHA_API_KEY) {
